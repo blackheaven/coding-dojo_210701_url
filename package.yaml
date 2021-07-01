@@ -1,0 +1,66 @@
+name:                url-matcher
+version:             0.1.0.0
+github:              "blackheaven/coding-dojo_210701_url"
+license:             ISC
+author:              "Gautier DI FOLCO"
+maintainer:          "gautier.difolco@gmail.com"
+copyright:           "Gautier DI FOLCO"
+
+extra-source-files:
+- README.md
+- LICENSE
+
+# Metadata used when publishing your package
+synopsis:            url matcher
+category:            Kata
+
+description: Mars rover kata in boring Haskell
+
+dependencies:
+- base
+- universum
+- text
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
+
+library:
+  source-dirs: src
+
+tests:
+  url-matcher-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Wcompat
+    - -Widentities
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wpartial-fields
+    - -Wredundant-constraints
+    - -Werror
+    dependencies:
+    - url-matcher
+
+tests:
+  url-matcher-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    - -Wcompat
+    - -Widentities
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wpartial-fields
+    - -Wredundant-constraints
+    - -Werror
+    dependencies:
+    - url-matcher
+    - hspec
+    - hspec-core

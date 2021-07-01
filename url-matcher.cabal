@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           url-matcher
+version:        0.1.0.0
+synopsis:       url matcher
+description:    Mars rover kata in boring Haskell
+category:       Kata
+homepage:       https://github.com/blackheaven/url-matcher#readme
+bug-reports:    https://github.com/blackheaven/url-matcher/issues
+author:         Gautier DI FOLCO
+maintainer:     gautier.difolco@gmail.com
+copyright:      Gautier DI FOLCO
+license:        ISC
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    LICENSE
+
+source-repository head
+  type: git
+  location: https://github.com/blackheaven/url-matcher
+
+library
+  exposed-modules:
+      Url
+  other-modules:
+      Paths_url_matcher
+  hs-source-dirs:
+      src
+  default-extensions:
+      NoImplicitPrelude
+      OverloadedStrings
+  build-depends:
+      base
+    , text
+    , universum
+  default-language: Haskell2010
+
+test-suite url-matcher-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      UrlSpec
+      Paths_url_matcher
+  hs-source-dirs:
+      test
+  default-extensions:
+      NoImplicitPrelude
+      OverloadedStrings
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -Werror
+  build-depends:
+      base
+    , hspec
+    , hspec-core
+    , text
+    , universum
+    , url-matcher
+  default-language: Haskell2010
